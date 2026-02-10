@@ -22,8 +22,6 @@ class Database
         // Load Port (Default to 3306 if not set in .env)
         $this->port = isset($_ENV['DB_PORT']) ? (int) $_ENV['DB_PORT'] : 3306;
 
-        // Create connection with PORT (The 5th argument is crucial!)
-        // mysqli(host, username, password, dbname, port)
         try {
             $this->conn = new mysqli($this->host, $this->username, $this->password, $this->db_name, $this->port);
         } catch (Exception $e) {
