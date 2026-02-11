@@ -13,8 +13,17 @@ JsonMiddleware::handle();
 $router = new Router();
 
 // --- Define Routes Here ---
+// Authentication Routes
 $router->post('/api/register', 'AuthController', 'register');
 $router->post('/api/login', 'AuthController', 'login');
+
+// The Refresh Route
+$router->post('/api/refresh', 'AuthController', 'refresh');
+
+// Check Login Status
+$router->get('/api/user/status', 'AuthController', 'status');
+
+// Patient Routes
 $router->get('/api/patients', 'PatientController', 'index');
 $router->post('/api/patients', 'PatientController', 'store');
 $router->put('/api/patients/{id}', 'PatientController', 'update');

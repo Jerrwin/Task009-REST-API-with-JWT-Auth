@@ -1,5 +1,7 @@
 <?php
 
+date_default_timezone_set('Asia/Kolkata');
+
 // 1. Error Reporting (KEPT)
 // Critical for development. Shows you if something breaks.
 ini_set('display_errors', 1);
